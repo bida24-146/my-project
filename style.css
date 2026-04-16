@@ -1,76 +1,103 @@
 :root {
     --black: #000;
     --white: #fff;
-    --grey: #1a1a1a;
+    --grey: #1c1c1c;
     --light-grey: #aaa;
     --orange: #ff5a00;
 }
 
-/* Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-    background-color: var(--black);
-    color: var(--white);
     font-family: Arial, sans-serif;
+    background: var(--black);
+    color: var(--white);
 }
 
 /* NAV */
 nav {
-    background: var(--grey);
+    display: flex;
+    justify-content: space-between;
     padding: 20px;
+    background: var(--grey);
 }
 
 nav h1 {
-    color: var(--white);
     font-weight: bold;
     letter-spacing: 2px;
 }
 
-nav ul li a:hover {
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+nav a:hover {
     color: var(--orange);
 }
 
-nav ul li a.active {
+.active {
     border-bottom: 2px solid var(--orange);
 }
 
 /* HERO */
 .hero {
-    background: linear-gradient(to bottom, black, #111);
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
-.hero h2 {
-    font-size: 3rem;
-    color: var(--white);
-    letter-spacing: 3px;
-}
-
-.tagline {
-    color: var(--light-grey);
-}
-
-/* BUTTON */
-button {
-    background: var(--orange);
-    color: white;
-    font-weight: bold;
-    border-radius: 20px;
-    transition: 0.3s;
-}
-
-button:hover {
-    background: white;
-    color: black;
-}
-
-/* LOGO */
 .logo {
     width: 120px;
-    filter: drop-shadow(0 0 10px var(--orange));
+    margin-bottom: 20px;
 }
 
-/* CARDS */
+/* SLIDESHOW */
+.slideshow {
+    position: relative;
+    height: 250px;
+    overflow: hidden;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: none;
+    background: #111;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+}
+
+.slide.active {
+    display: flex;
+}
+
+/* GRID */
+.container {
+    padding: 40px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+/* PRODUCT CARD */
 .card {
     background: var(--grey);
+    padding: 15px;
     border: 1px solid #333;
     transition: 0.3s;
 }
@@ -80,17 +107,32 @@ button:hover {
     border-color: var(--orange);
 }
 
-/* COOL ORANGE SWIPE EFFECT */
-.card::after {
-    background: var(--orange);
+/* IMAGE PLACEHOLDER */
+.image-box {
+    height: 120px;
+    background: #333;
+    margin-bottom: 10px;
 }
 
-.card:hover h3,
-.card:hover p {
+/* BUTTON */
+button {
+    width: 100%;
+    padding: 10px;
+    background: var(--orange);
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background: white;
     color: black;
 }
 
 /* FOOTER */
 footer {
+    text-align: center;
+    padding: 20px;
     background: var(--grey);
 }
+
