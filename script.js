@@ -17,3 +17,8 @@ window.onload = () => {
         }, 50);
     }
 };
+function scrollToSection() {
+    document.getElementById("shop").scrollIntoView({
+        behavior: "smooth"
+    });
+}
