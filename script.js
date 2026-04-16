@@ -1,24 +1,19 @@
-function showMessage(product) {
-    alert(product + " added to cart 🛒");
+// Slideshow
+let index = 0;
+function showSlides() {
+    let slides = document.querySelectorAll(".slide");
+    slides.forEach(slide => slide.classList.remove("active"));
+
+    index++;
+    if (index > slides.length) index = 1;
+
+    slides[index - 1].classList.add("active");
+    setTimeout(showSlides, 3000);
 }
 
-/* Simple futuristic text animation */
-window.onload = () => {
-    const title = document.querySelector(".hero h2");
-    if (title) {
-        let text = title.innerText;
-        title.innerText = "";
+window.onload = showSlides;
 
-        let i = 0;
-        let interval = setInterval(() => {
-            title.innerText += text[i];
-            i++;
-            if (i === text.length) clearInterval(interval);
-        }, 50);
-    }
-};
-function scrollToSection() {
-    document.getElementById("shop").scrollIntoView({
-        behavior: "smooth"
-    });
+// Button interaction
+function buyItem(name) {
+    alert(name + " added to cart 🛒");
 }
