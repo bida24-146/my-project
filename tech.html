@@ -8,32 +8,45 @@
 <body>
 
 <nav>
-    <h1>KASI . CONNECT101</h1>
+    <h1>KASI CONNECT</h1>
     <ul>
-        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="index.html">Home</a></li>
         <li><a href="kicks.html">Kicks</a></li>
-        <li><a href="tech.html">Tech</a></li>
+        <li><a href="tech.html" class="active">Tech</a></li>
         <li><a href="threads.html">Threads</a></li>
         <li><a href="contact.html">Contact</a></li>
     </ul>
 </nav>
 
+<div class="slideshow">
+    <div class="slide active">SMARTPHONES</div>
+    <div class="slide">ACCESSORIES</div>
+    <div class="slide">UPGRADES</div>
+</div>
+
+<p style="padding:20px; color:#aaa;">
+    Swap and top up services are available.
+</p>
+
 <div class="container">
 
+    <!-- 12 PRODUCT CARDS -->
     <div class="card">
-        <h3>Smartphone X</h3>
-        <p>$799</p>
-        <button onclick="showMessage('Smartphone X')">Buy</button>
+        <div class="image-box"></div>
+        <h3>Phone Model</h3>
+        <p>P 5,000</p>
+        <button onclick="buyItem('Phone')">Buy</button>
     </div>
 
-    <div class="card">
-        <h3>Wireless Earbuds</h3>
-        <p>$199</p>
-        <button onclick="showMessage('Earbuds')">Buy</button>
-    </div>
+    <!-- COPY THIS CARD 11 MORE TIMES -->
 
 </div>
+
+<footer>
+    <p>Gaborone | 267 77308524</p>
+</footer>
 
 <script src="script.js"></script>
 </body>
 </html>
+ 
